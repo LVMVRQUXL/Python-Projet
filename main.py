@@ -1,5 +1,9 @@
+from account import Account
+
+
 def main():
-    print('AYYYYYYY')
+    acc = Account('test', 'ozef')
+    print(acc)
 
 
 if __name__ == '__main__':
