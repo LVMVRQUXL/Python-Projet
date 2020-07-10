@@ -10,9 +10,13 @@ class Account:
         return self._password
 
     def __set__username(self, username):
+        if type(username) is not str or username == '':
+            raise ValueError
         self._username = username
 
     def __set__password(self, password):
+        if type(password) is not str or password == '':
+            raise ValueError
         self._password = password
 
     def __str__(self):
