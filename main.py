@@ -2,9 +2,8 @@ from account import Account
 
 
 def main():
-    acc = Account('test', 'ozef')
+    acc = Account('test', 'ozef', 'No website')
     print(acc)
-    acc.username = ''
 
 
 if __name__ == '__main__':
