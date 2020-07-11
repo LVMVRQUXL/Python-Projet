@@ -29,7 +29,7 @@ class Account:
         self._password = description
 
     def __str__(self):
-        return '(username: {}; password: {}; description: {})'.format(
+        return 'Account(username: {}, password: {}, description: {})'.format(
             self._username, self._password, self._description
         )
 
