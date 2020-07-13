@@ -4,6 +4,11 @@ class Account:
         self._password = password
         self._description = description
 
+    def __str__(self):
+        return 'Account(username: {}, password: {}, description: {})'.format(
+            self._username, self._password, self._description
+        )
+
     def __get__username(self):
         return self._username
 
@@ -27,11 +32,6 @@ class Account:
         if type(description) is not str:
             raise ValueError
         self._password = description
-
-    def __str__(self):
-        return 'Account(username: {}, password: {}, description: {})'.format(
-            self._username, self._password, self._description
-        )
 
     username = property(__get__username, __set__username)
     password = property(__get__password, __set__password)
