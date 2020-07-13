@@ -8,6 +8,8 @@ def main():
     csv_manager = CSVManager()
     print(csv_manager)
     csv_manager.add_account(acc)
+    accounts = csv_manager.get_all_accounts()
+    [print(acc) for acc in accounts]
 
 
 if __name__ == '__main__':
