@@ -10,10 +10,10 @@ class SecurityManager:
         else:
             self.__read_secret_key_from_file()
 
-    def encrypt_password(self, password) -> str:
+    def encrypt_password(self, password: str) -> str:
         return self.__secret_key.encrypt(password.encode()).decode()
 
-    def decrypt_password(self, password) -> str:
+    def decrypt_password(self, password: str) -> str:
         return self.__secret_key.decrypt(password.encode()).decode()
 
     def __create_key_security_file(self):
