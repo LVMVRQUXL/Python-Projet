@@ -8,15 +8,27 @@ def main():
     account_manager.add_account(acc)
     accounts = account_manager.get_all_accounts()
     if len(accounts) == 0:
-        print('No accounts to print!')
+        print('No accounts to print!\n')
     else:
         [print(acc) for acc in accounts]
+        print('\n')
+
+    new_acc = Account('test', 'password_updated', 'No description')
+    account_manager.update_account(acc, new_acc)
+    accounts = account_manager.get_all_accounts()
+    if len(accounts) == 0:
+        print('No accounts to print!\n')
+    else:
+        [print(acc) for acc in accounts]
+        print('\n')
+
     account_manager.remove_account(acc)
     accounts = account_manager.get_all_accounts()
     if len(accounts) == 0:
-        print('No accounts to print!')
+        print('No accounts to print!\n')
     else:
         [print(acc) for acc in accounts]
+        print('\n')
 
 
 if __name__ == '__main__':

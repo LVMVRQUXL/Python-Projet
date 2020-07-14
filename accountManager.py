@@ -13,6 +13,15 @@ def equal_accounts(account_1: Account, account_2: Account) -> bool:
     return True
 
 
+def find_account_index(accounts: List[Account], account: Account) -> int:
+    index = 0
+    for acc in accounts:
+        if equal_accounts(acc, account):
+            break
+        index = index + 1
+    return index
+
+
 class AccountManager:
     def __init__(self):
         self.__filename = 'accounts'
@@ -38,12 +47,15 @@ class AccountManager:
     def remove_account(self, account: Account):
         if self.__is_account_already_exists(account) is True:
             accounts = self.get_all_accounts()
-            index = 0
-            for acc in accounts:
-                if equal_accounts(acc, account):
-                    break
-                index = index + 1
+            index = find_account_index(accounts, account)
             accounts.pop(index)
+            self.__write_accounts_in_csv_file(accounts)
+
+    def update_account(self, old_account: Account, new_account: Account):
+        if self.__is_account_already_exists(old_account) is True:
+            accounts = self.get_all_accounts()
+            index = find_account_index(accounts, old_account)
+            accounts[index] = new_account
             self.__write_accounts_in_csv_file(accounts)
 
     def __create_csv_file(self):
