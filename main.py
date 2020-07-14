@@ -1,15 +1,22 @@
 from account import Account
-from csvManager import CSVManager
+from accountManager import AccountManager
 
 
 def main():
     acc = Account('test', 'ozef', 'No website')
-    print(acc)
-    csv_manager = CSVManager()
-    print(csv_manager)
-    csv_manager.add_account(acc)
-    accounts = csv_manager.get_all_accounts()
-    [print(acc) for acc in accounts]
+    account_manager = AccountManager()
+    account_manager.add_account(acc)
+    accounts = account_manager.get_all_accounts()
+    if len(accounts) == 0:
+        print('No accounts to print!')
+    else:
+        [print(acc) for acc in accounts]
+    account_manager.remove_account(acc)
+    accounts = account_manager.get_all_accounts()
+    if len(accounts) == 0:
+        print('No accounts to print!')
+    else:
+        [print(acc) for acc in accounts]
 
 
 if __name__ == '__main__':
