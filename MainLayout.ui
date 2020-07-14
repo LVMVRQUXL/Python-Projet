@@ -23,6 +23,9 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="statusTip">
+     <string>Save a new account</string>
+    </property>
     <property name="text">
      <string>Save Account</string>
     </property>
@@ -86,7 +89,7 @@
      <string>Description</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="descriptionField">
     <property name="geometry">
      <rect>
       <x>160</x>

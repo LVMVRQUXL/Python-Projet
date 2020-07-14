@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(604, 428)
@@ -34,9 +35,9 @@ class Ui_MainWindow(object):
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(80, 210, 61, 21))
         self.label_3.setObjectName("label_3")
-        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(160, 180, 291, 71))
-        self.textEdit.setObjectName("textEdit")
+        self.descriptionField = QtWidgets.QTextEdit(self.centralwidget)
+        self.descriptionField.setGeometry(QtCore.QRect(160, 180, 291, 71))
+        self.descriptionField.setObjectName("descriptionField")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 604, 21))
@@ -45,24 +46,19 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        self.pushButton.clicked.connect(self.isClicked)
+        
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButton.setStatusTip(_translate("MainWindow", "Save a new account"))
         self.pushButton.setText(_translate("MainWindow", "Save Account"))
         self.label.setText(_translate("MainWindow", "UserName"))
         self.label_2.setText(_translate("MainWindow", "Password"))
         self.label_3.setText(_translate("MainWindow", "Description"))
 
+    def isClicked(self):
+        self.descriptionField.setText("Star citizen")
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
