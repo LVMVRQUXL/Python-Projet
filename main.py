@@ -1,6 +1,5 @@
 from account import Account
 from accountManager import AccountManager
-
 from mainLayout import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -33,14 +32,12 @@ def main():
         print('\n')
 
 
-
 if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-
     MainWindow.show()
     sys.exit(app.exec_())
-    # main()
+
