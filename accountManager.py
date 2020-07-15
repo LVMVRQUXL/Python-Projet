@@ -2,7 +2,7 @@ import os.path as path
 from typing import List
 
 from account import Account
-from security import SecurityManager
+from securityManager import SecurityManager
 
 
 def equal_accounts(account_1: Account, account_2: Account) -> bool:
