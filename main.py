@@ -3,6 +3,7 @@ from accountManager import AccountManager
 from mainLayout import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from controller import MainWindow
+
 import sys
 def main():
     acc = Account('test', 'ozef', 'No website')
@@ -37,9 +38,5 @@ if __name__ == '__main__':
 
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()
-    # MainWindow = QtWidgets.QMainWindow()
-    # ui = Ui_MainWindow()
-    # ui.setupUi(MainWindow)
-    # MainWindow.show()  
     window.show()
-    sys.exit(app.exec_())
+    app.exec_()

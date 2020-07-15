@@ -8,8 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from account import Account
-from accountManager import AccountManager
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -44,6 +43,10 @@ class Ui_MainWindow(object):
         self.passwordField = QtWidgets.QLineEdit(self.addAccount)
         self.passwordField.setGeometry(QtCore.QRect(120, 100, 291, 31))
         self.passwordField.setObjectName("passwordField")
+        self.infoLabel = QtWidgets.QLabel(self.addAccount)
+        self.infoLabel.setGeometry(QtCore.QRect(10, 340, 47, 13))
+        self.infoLabel.setText("")
+        self.infoLabel.setObjectName("infoLabel")
         self.tabWidget.addTab(self.addAccount, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -63,14 +66,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        
-        self.saveAccountButton.clicked.connect(self.isClicked)
-        
-    def isClicked(self):
-        account = Account(str(self.userNameField.text()),str(self.passwordField.text()),str(self.descriptionField.toPlainText()))
-        account_manager = AccountManager()
-        account_manager.add_account(account)
-        
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
