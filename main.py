@@ -2,7 +2,8 @@ from account import Account
 from accountManager import AccountManager
 from mainLayout import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from controller import MainWindow
+import sys
 def main():
     acc = Account('test', 'ozef', 'No website')
     account_manager = AccountManager()
@@ -33,11 +34,12 @@ def main():
 
 
 if __name__ == '__main__':
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
 
+    app = QtWidgets.QApplication(sys.argv)
+    window = MainWindow()
+    # MainWindow = QtWidgets.QMainWindow()
+    # ui = Ui_MainWindow()
+    # ui.setupUi(MainWindow)
+    # MainWindow.show()  
+    window.show()
+    sys.exit(app.exec_())
