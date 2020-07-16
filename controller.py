@@ -14,12 +14,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.save_account_button.clicked.connect(self.add)
         self.delete_button.clicked.connect(self.delete)
-        self.fill_formulaire_button.clicked.connect(self.fill_form)
         self.update_button.clicked.connect(self.update)
+        self.account_view.itemClicked.connect(self.fill_form)
         self.refresh()
         
     def add(self):
-        if((str(self.user_name_field.text()) != "" and str(self.password_field.text()) != "" and str(self.description_field.toPlainText()) != "" )):
+        if str(self.user_name_field.text()) != "" and str(self.password_field.text()) != "" and str(self.description_field.toPlainText()) != "":
             account = Account(str(self.user_name_field.text()),str(self.password_field.text()),str(self.description_field.toPlainText()))
             account_manager.add_account(account)
             self.refresh()
@@ -32,29 +32,29 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
     def refresh(self):
         self.account_view.clear()
-        accounts = account_manager.get_all_accounts()
-        for i in accounts:
+        self.__accounts = account_manager.get_all_accounts()
+        for i in self.__accounts:
             self.account_view.addItem("Username: "+i.username+"  ||  Description: "+i.description)
     
     
-    def delete(self):
-        accounts = account_manager.get_all_accounts()
-        if(self.account_view.currentRow() != None):
-            account_manager.remove_account(accounts[self.account_view.currentRow()])
+    def delete(self):    
+        if(self.account_view.currentRow() != None and len(self.__accounts) > 0):
+            account_manager.remove_account(self.__accounts[self.account_view.currentRow()])
+            self.username_info_field.clear()
+            self.password_info_field.clear()
+            self.description_info_field.clear()
             self.refresh()
             
     def fill_form(self):
-        accounts = account_manager.get_all_accounts()
         if(self.account_view.currentRow() != None):
-            account = accounts[self.account_view.currentRow()]
+            account = self.__accounts[self.account_view.currentRow()]
             self.username_info_field.setText(account.username)
             self.password_info_field.setText(account.password)
             self.description_info_field.setText(account.description)
             
     def update(self):
-        accounts = account_manager.get_all_accounts()
-        if(self.account_view.currentRow() != None):
-            old_account = accounts[self.account_view.currentRow()]
+        if(self.account_view.currentRow() != None and len(self.__accounts) > 0):
+            old_account = self.__accounts[self.account_view.currentRow()]
             if str(self.username_info_field.text()) != "" and str(self.password_info_field.text()) != "" and str(self.description_info_field.toPlainText()) != "":
                 new_account = Account(str(self.username_info_field.text()),str(self.password_info_field.text()),str(self.description_info_field.toPlainText()))
                 account_manager.update_account(old_account,new_account)
