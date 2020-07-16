@@ -36,7 +36,7 @@
      <attribute name="title">
       <string>Add account</string>
      </attribute>
-     <widget class="QTextEdit" name="descriptionField">
+     <widget class="QTextEdit" name="description_field">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -46,7 +46,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="userNameField">
+     <widget class="QLineEdit" name="user_name_field">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -95,7 +95,7 @@
        <string>Password</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="saveAccountButton">
+     <widget class="QPushButton" name="save_account_button">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -111,7 +111,7 @@
        <string>Save Account</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="passwordField">
+     <widget class="QLineEdit" name="password_field">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -121,7 +121,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="infoLabel">
+     <widget class="QLabel" name="info_label">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -139,7 +139,7 @@
      <attribute name="title">
       <string>Account List</string>
      </attribute>
-     <widget class="QListWidget" name="accountView">
+     <widget class="QListWidget" name="account_view">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -149,7 +149,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="deleteButton">
+     <widget class="QPushButton" name="delete_button">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -162,7 +162,7 @@
        <string>Delete</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="showInfoButton">
+     <widget class="QPushButton" name="fill_formulaire_button">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -172,7 +172,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>show info</string>
+       <string>Fill formulaire</string>
       </property>
      </widget>
      <widget class="QLabel" name="usernameLabel">
@@ -214,7 +214,7 @@
        <string>Description</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="updateButton">
+     <widget class="QPushButton" name="update_button">
       <property name="geometry">
        <rect>
         <x>400</x>
@@ -227,7 +227,7 @@
        <string>Update</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="usernameInfo_2">
+     <widget class="QLineEdit" name="username_info_field">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -237,7 +237,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="password_info_field">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -247,7 +247,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEdit">
+     <widget class="QTextEdit" name="description_info_field">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -255,6 +255,19 @@
         <width>171</width>
         <height>71</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="info_label_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>340</y>
+        <width>551</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
