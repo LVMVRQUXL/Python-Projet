@@ -139,7 +139,7 @@
      <attribute name="title">
       <string>Account List</string>
      </attribute>
-     <widget class="QListView" name="accountView">
+     <widget class="QListWidget" name="accountView">
       <property name="geometry">
        <rect>
         <x>10</x>
