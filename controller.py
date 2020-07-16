@@ -11,9 +11,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-        self.saveAccountButton.clicked.connect(self.isClicked)
+        self.saveAccountButton.clicked.connect(self.add)
         
-    def isClicked(self):
+    def add(self):
         if((str(self.userNameField.text()) != "" and str(self.passwordField.text()) != "" and str(self.descriptionField.toPlainText()) != "" )):
             account = Account(str(self.userNameField.text()),str(self.passwordField.text()),str(self.descriptionField.toPlainText()))
             account_manager = AccountManager()
@@ -21,3 +21,5 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.infoLabel.setText("Account Saved")
         else:
             self.infoLabel.setText("All fields are required")
+            
+    
