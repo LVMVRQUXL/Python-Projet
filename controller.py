@@ -23,6 +23,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             account = Account(str(self.user_name_field.text()),str(self.password_field.text()),str(self.description_field.toPlainText()))
             account_manager.add_account(account)
             self.refresh()
+            self.user_name_field.clear()
+            self.password_field.clear()
+            self.description_field.clear()
             self.info_label.setText("Account Saved")
         else:
             self.info_label.setText("All fields are required")
@@ -55,6 +58,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if str(self.username_info_field.text()) != "" and str(self.password_info_field.text()) != "" and str(self.description_info_field.toPlainText()) != "":
                 new_account = Account(str(self.username_info_field.text()),str(self.password_info_field.text()),str(self.description_info_field.toPlainText()))
                 account_manager.update_account(old_account,new_account)
+                self.username_info_field.clear()
+                self.password_info_field.clear()
+                self.description_info_field.clear()
                 self.refresh()
                 self.info_label_2.setText("Account updated")
             else:

@@ -1,6 +1,5 @@
 from account import Account
 from accountManager import AccountManager
-from mainLayout import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from controller import MainWindow
 
